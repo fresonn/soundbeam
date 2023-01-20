@@ -1,4 +1,4 @@
-<p style="text-align: center;font-size: 37px;font-weight: bold;">Oasis Audio Player</p>
+# Oasis Audio Player
 
 ## License
 
