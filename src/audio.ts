@@ -5,6 +5,8 @@ class LibAudio {
   public analyser: AnalyserNode | null
 
   constructor(audio: string) {
+    if (!audio) throw new Error(`audio is not specified`)
+
     this.active = false
     this.audioCtx = null
     this.analyser = null
