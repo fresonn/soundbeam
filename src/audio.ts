@@ -33,20 +33,20 @@ class LibAudio {
     this.active = true
   }
 
-  play() {
+  public play() {
     if (!this.src) throw new Error('nothing to play: specify src or call load() method')
     this.audio.play()
   }
 
-  pause() {
+  public pause() {
     this.audio.pause()
   }
 
-  isActive(): boolean {
+  public isActive(): boolean {
     return this.active
   }
 
-  load() {}
+  public load() {}
 }
 
 export default LibAudio
