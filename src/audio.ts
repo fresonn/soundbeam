@@ -1,16 +1,16 @@
 class LibAudio {
+  private src: string
   private active: boolean
   public audio: HTMLAudioElement
   public audioCtx: AudioContext | null
   public analyser: AnalyserNode | null
 
-  constructor(audio: string) {
-    if (!audio) throw new Error(`audio is not specified`)
-
+  constructor(src?: string) {
     this.active = false
     this.audioCtx = null
     this.analyser = null
-    this.audio = new Audio(audio)
+    this.audio = new Audio(src)
+    this.src = src
   }
 
   init() {
@@ -34,6 +34,7 @@ class LibAudio {
   }
 
   play() {
+    if (!this.src) throw new Error('nothing to play: specify src or call load() method')
     this.audio.play()
   }
 
@@ -44,6 +45,8 @@ class LibAudio {
   isActive(): boolean {
     return this.active
   }
+
+  load() {}
 }
 
 export default LibAudio

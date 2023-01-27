@@ -6,7 +6,7 @@ const pauseBtn = document.getElementById('pause') as HTMLButtonElement
 
 interface PProps {
   node: HTMLElement | string
-  src: string
+  src?: string
 }
 
 class Player {
@@ -44,7 +44,7 @@ class Player {
 
 const player = new Player({
   node: '#player',
-  src: '../assets/magnum.mp3'
+  src: '../assets/main.mp3'
 })
 
 player.log()
