@@ -1,4 +1,4 @@
-# Oasis Audio Player
+# Soundbeam Audio Player
 
 ## License
 

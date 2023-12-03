@@ -1,5 +1,5 @@
 {
-  "name": "oasis-player",
+  "name": "soundbeam",
   "version": "0.0.1",
   "description": "Canvas based audio player",
   "main": "./dist/main.bundle.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Oasis-Music/player.git"
+    "url": "git+https://github.com/fresonn/soundbeam"
   },
   "keywords": [
     "audio",
@@ -20,9 +20,9 @@
   "author": "fresonn",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Oasis-Music/player/issues"
+    "url": "https://github.com/fresonn/soundbeam/issues"
   },
-  "homepage": "https://github.com/Oasis-Music/player#readme",
+  "homepage": "https://github.com/fresonn/soundbeam#readme",
   "devDependencies": {
     "html-webpack-plugin": "^5.5.0",
     "prettier": "2.8.3",
