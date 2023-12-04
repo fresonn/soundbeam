@@ -1,6 +1,6 @@
 {
   "name": "soundbeam",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Canvas based audio player",
   "main": "./dist/main.bundle.js",
   "scripts": {
