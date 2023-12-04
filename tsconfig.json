@@ -1,8 +1,14 @@
 {
   "compilerOptions": {
+    "lib": ["DOM", "ESNext"],
     "target": "ES5",
-    "module": "ES2015",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
   },
   "files": ["./index.d.ts"],
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
