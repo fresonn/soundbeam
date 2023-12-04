@@ -1,10 +1,9 @@
 const path = require('path')
-const glob = require('glob')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: { lib: glob.sync('./src/**/*(*.ts|*.js)') },
+  entry: path.resolve(__dirname, 'src/index.ts'),
   module: {
     rules: [
       {
@@ -19,10 +18,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Development',
-      template: 'public/index.html'
-    })
+    // new HtmlWebpackPlugin({
+    //   title: 'Development',
+    //   template: 'public/index.html'
+    // })
   ],
   resolve: {
     extensions: ['.ts', '.js']
@@ -30,16 +29,23 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    assetModuleFilename: 'assets/[hash][ext][query]'
+    assetModuleFilename: 'assets/[hash][ext][query]',
+    library: '$',
+    libraryTarget: 'umd'
   },
   devServer: {
     static: path.join(__dirname, 'dist'),
-    compress: true,
+    compress: false,
+
     port: 4000,
     static: [
       {
         directory: path.resolve(__dirname, 'assets'),
         publicPath: '/assets'
+      },
+      {
+        directory: path.resolve(__dirname, 'public'),
+        publicPath: '/'
       }
     ]
   }
