@@ -1,58 +1,24 @@
-import LibAudio from './audio'
-import Trackline from './trackline'
+import Soundbeam from './soundbeam'
 
-const playBtn = document.getElementById('play') as HTMLButtonElement
-const pauseBtn = document.getElementById('pause') as HTMLButtonElement
+const nodeEl = document.getElementById('player') as HTMLElement
 
-interface PProps {
-  node: HTMLElement | string
-  src?: string
+const player = new Soundbeam({
+  node: nodeEl
+})
+
+console.log(player)
+
+const playBtn = document.getElementById('play')
+const pauseBtn = document.getElementById('pause')
+
+player.load('../assets/main.mp3')
+
+if (playBtn && pauseBtn) {
+  playBtn.addEventListener('click', () => {
+    player.play()
+  })
+
+  pauseBtn.addEventListener('click', () => {
+    player.pause()
+  })
 }
-
-class Player {
-  isActive: boolean
-  readonly libAudio: LibAudio
-  readonly trackline: Trackline
-
-  constructor(args: PProps) {
-    this.isActive = false
-    this.libAudio = new LibAudio(args.src)
-    this.trackline = new Trackline(args.node, this.libAudio)
-  }
-
-  init() {
-    this.isActive = true
-    this.libAudio.init()
-  }
-
-  public play() {
-    if (!this.isActive) {
-      this.init()
-    }
-    this.libAudio.play()
-    this.trackline.animate()
-  }
-
-  public pause() {
-    this.libAudio.pause()
-  }
-
-  public log() {
-    // console.log(this.node)
-  }
-}
-
-const player = new Player({
-  node: '#player',
-  src: '../assets/main.mp3'
-})
-
-player.log()
-
-playBtn.addEventListener('click', () => {
-  player.play()
-})
-
-pauseBtn.addEventListener('click', () => {
-  player.pause()
-})
