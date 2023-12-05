@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "rollup -c -w",
+    "watch": "rollup -c -w",
+    "serve": "serve -p 4000 -L",
+    "dev": "conc \"npm:serve\" \"npm:watch\"",
     "devOld": "webpack serve --mode development",
     "build": "rollup -c ",
     "buildOld": "webpack --mode production"
@@ -28,15 +30,14 @@
   "homepage": "https://github.com/fresonn/soundbeam#readme",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-html": "^1.0.3",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.5",
     "@types/howler": "^2.2.11",
+    "concurrently": "^8.2.2",
     "html-webpack-plugin": "^5.5.3",
     "prettier": "^3.1.0",
     "rollup": "^4.6.1",
-    "rollup-plugin-serve": "^3.0.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.2",
     "webpack": "^5.89.0",
