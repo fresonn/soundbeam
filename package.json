@@ -1,6 +1,6 @@
 {
   "name": "soundbeam",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Canvas based audio player",
   "main": "./dist/cjs/soundbeam.cjs",
   "module": "./dist/esm/soundbeam.js",
