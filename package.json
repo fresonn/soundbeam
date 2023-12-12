@@ -5,10 +5,17 @@
   "main": "./dist/cjs/soundbeam.cjs",
   "module": "./dist/esm/soundbeam.js",
   "type": "module",
+  "types": "./dist/cjs/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/esm/soundbeam.js",
-      "require": "./dist/cjs/soundbeam.cjs"
+      "import": {
+        "types": "./dist/esm/types/index.d.ts",
+        "default": "./dist/esm/soundbeam.js"
+      },
+      "require": {
+        "types": "./dist/cjs/types/index.d.ts",
+        "default": "./dist/cjs/soundbeam.cjs"
+      }
     }
   },
   "files": [

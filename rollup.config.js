@@ -14,6 +14,7 @@ function buildConfig({ output }) {
    */
   const config = {
     input: namedInput,
+    // external: ['howler'],
     output: {
       ...output
     },
@@ -22,7 +23,10 @@ function buildConfig({ output }) {
       commonjs(),
       nodeResolve(),
       terser({
-        maxWorkers: 2
+        maxWorkers: 2,
+        compress: {
+          drop_console: true
+        }
       }),
       analyze({
         hideDeps: true,
