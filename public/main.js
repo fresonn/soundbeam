@@ -1,4 +1,4 @@
-import Soundbeam from '../output/index.js'
+import Soundbeam from '../dist/esm/soundbeam.js'
 
 const nodeEl = document.getElementById('player')
 

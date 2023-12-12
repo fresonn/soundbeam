@@ -4,6 +4,8 @@
 
 #### Package is under active development(beta)
 
+But sandbox available on `npm run dev`
+
 ## Installation
 
 ```bash
